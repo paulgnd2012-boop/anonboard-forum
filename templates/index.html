@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 style="margin:15px;">AnonBoard Forum</h2>
+
+{% for post in posts %}
+<div class="post">
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.content }}</p>
+
+    {% if post.image %}
+        <img src="{{ url_for('static', filename='uploads/' + post.image) }}">
+    {% endif %}
+
+    <small>Posted {{ post.date }}</small>
+</div>
+{% endfor %}
+
+{% endblock %}

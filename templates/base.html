@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AnonBoard</title>
+    <style>
+        body { background:#eef2ff; font-family:Arial; }
+        .post { background:white; padding:15px; margin:15px; border-radius:8px; }
+        img { max-width:300px; }
+        nav { background:#222; padding:10px; }
+        nav a { color:white; margin-right:15px; text-decoration:none; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a>
+    {% if current_user.is_authenticated %}
+        <a href="/create">New Post</a>
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    {% endif %}
+</nav>
+
+{% block content %}{% endblock %}
+
+</body>
+</html>
