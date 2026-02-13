@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+forum.db
+instance/
+static/uploads/
+.env
